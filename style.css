@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container {
+    min-width: 900px;
+    min-height: 900px;
+    border-radius: 4rem;
+    background-color: olive;
+    box-shadow: 0 0 10px black;
+}
