@@ -15,3 +15,13 @@ body {
     background-color: olive;
     box-shadow: 0 0 10px black;
 }
+#menuMode {
+    display: none;
+}
+#game {
+    display: none;
+}
+.media {
+    max-width: 40px
+    max-height: 40px
+}
