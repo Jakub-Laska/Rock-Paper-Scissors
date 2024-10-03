@@ -43,6 +43,11 @@ body {
     max-width: 45px;
     max-height: 45px;
     border-radius: 100%;
+    transition: .5s;
+}
+.mediaIcon:hover {
+    transform: rotate(360deg) scale(1.2) translate(4px, 4px);
+    box-shadow: 0 0 15px olive;
 }
 #game {
     display: none;
