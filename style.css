@@ -9,6 +9,11 @@ body {
     align-items: center;
 }
 #container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     min-width: 900px;
     min-height: 900px;
     border-radius: 4rem;
@@ -24,4 +29,5 @@ body {
 .media {
     max-width: 40px
     max-height: 40px
+    box-shadow: 0 0 5px black;
 }
