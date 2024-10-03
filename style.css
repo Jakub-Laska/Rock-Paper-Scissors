@@ -19,9 +19,17 @@ body {
     min-width: 1000px;
     min-height: 800px;
     border-radius: 4rem;
-    background-color: rgba(128, 128, 0, 0.548);
+    background-color: rgba(128, 128, 0, 0.438);
     box-shadow: 0 0 10px black;
     padding: 2rem;
+}
+#menuLabel {
+    font-weight: 900;
+    font-size: 3rem;
+}
+#signature {
+    font-size: 1rem;
+    color: #0000004d;
 } 
 #menuMode {
     display: none;
