@@ -27,12 +27,27 @@ body {
 #menuLabel {
     font-weight: 900;
     font-size: 3rem;
+    letter-spacing: 1px;
 }
 #signature {
     font-size: 1rem;
     color: #0000004d;
-} 
-#menuMode {
+}
+.menuBtn {
+    border: 5px inset olive;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    border-radius: 2rem;
+    background-color: rgba(128, 128, 0, 0.658);
+    font-weight: 900;
+    transition: .3s;
+}
+.menuBtn:hover {
+    background-color: rgb(102, 102, 0);
+    color: #ffffffc9;
+    cursor: pointer;
+}
+.hide{
     display: none;
 }
 #media {
@@ -49,6 +64,7 @@ body {
 .mediaIcon:hover {
     transform: rotate(360deg) scale(1.2) translate(4px, 4px);
     box-shadow: 0 0 15px olive;
+    cursor: pointer;
 }
 #game {
     display: none;
