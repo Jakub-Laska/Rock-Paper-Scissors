@@ -61,9 +61,9 @@ function showLoadingEasy() {
     let menu = document.querySelector('#menu');
     
     menu.style.display = 'none';
-    loadingScreen.style.display = 'block';
+    loadingScreen.style.display = 'flex';
     
-    setTimeout(showGameEasy, 2000);
+    setTimeout(showGameEasy, 3000);
 }
 
 hardBtn.addEventListener('click', showLoadingHard);
