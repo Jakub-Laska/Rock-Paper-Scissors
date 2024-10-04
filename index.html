@@ -11,13 +11,18 @@
     <section id="container">
         <div id="menu">
             <label id="menuLabel" for="startBtn">Rock Paper Scissors</label>
-
             <div id="menuButtons">
-                <p class="menuBtn startBtn">start game</p>
-                <p class="menuBtn easyBtn hide">easy mode</p>
-                <p class="menuBtn hardBtn hide">hard mode</p>
+                <div id="start">
+                    <p class="menuBtn startBtn">start game</p>
+                </div>
+                <span class="easyInfo hide">standard rules of rock paper scissors (best of 5)</span>
+                <span class="hardInfo hide">no draws you either win or you lose (best of 5)</span>
+                <div id="playModes">
+                    <p class="menuBtn easyBtn hide">easy mode</p>
+                    <p class="menuBtn hardBtn hide">hard mode</p>
+                    <p class="menuBtn goBack hide">go back</p>
+                </div>
             </div>
-
             <footer>
                 <div id="media">
                     <a href="https://github.com/Jakub-Laska" target="_blank">
@@ -30,7 +35,23 @@
                 <p id="signature">Jakub Laska</p>
             </footer>
         </div>
-        <div id="game"></div>
+        <div id="loading"></div>
+        <div id="game">
+            <p id="roundCounter">round counter:</p>
+            <p id="botWins">bot wins:</p>
+            <div class="botCards cards">
+                <span id="botRock" class="card">rock</span>
+                <span id="botPaper" class="card">paper</span>
+                <span id="botScissors" class="card">scissors</span>
+            </div>
+            <p id="versus">VS</p>
+            <div class="playerCards cards">
+                <span id="playerRock" class="card player">rock</span>
+                <span id="playerPaper" class="card player">paper</span>
+                <span id="playerScissors" class="card player">scissors</span>
+            </div>
+            <p id="playerWins">player wins:</p>
+        </div>
     </section>
 </body>
 </html>
