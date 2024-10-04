@@ -12,8 +12,8 @@ body {
     background-color: #80800041;
 }
 #menu {
-    display: none;
-    /* display: flex; */
+    /* display: none; */
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -104,8 +104,8 @@ body {
     box-shadow: 0 0 20px #000000b3;
 }
 #game {
-    /* display: none; */
-    display: flex;
+    display: none;
+    /* display: flex; */
     background-color: #d909099a;
     min-width: 800px;
     min-height: 700px;
