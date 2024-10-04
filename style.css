@@ -87,7 +87,7 @@ body {
     position: absolute;
     width: 170px;
     padding: .5rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     color: rgba(255, 255, 255, 0.9);
     border-radius: 1rem;
     box-shadow: 0 0 10px #000000b3;
