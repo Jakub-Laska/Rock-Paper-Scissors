@@ -9,7 +9,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #80800041;
+    background-color: #ff84a5d9;
+    background-image: url(images/background.jpg);   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#freepik{
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 12px;
+}
+.freepik {
+    text-decoration: none;
+    color: #ff00bb;
+    opacity: .5;
+}
+.freepik:hover {
+    opacity: 1;
 }
 #menu {
     /* display: none; */
@@ -21,9 +40,10 @@ body {
     min-width: 800px;
     min-height: 700px;
     border-radius: 4rem;
-    background-color: #80800070;
+    background-color: #ffffff35;
     box-shadow: 0 0 20px #000000b3;
     padding: 2rem;
+    position: relative;
 }
 #menuLabel {
     font-weight: 900;
@@ -31,7 +51,6 @@ body {
     letter-spacing: 1px;
 }
 #menuButtons {
-    margin-top: 5rem;
     width: 300px;
     height: 300px;
     display: flex;
@@ -39,38 +58,47 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.startBtn {
+    margin-top: 5rem;
+}
 #playModes {
     display: flex;
     flex-direction: column;
     gap: .4rem;
 }
 .menuBtn {
-    border: 2px inset olive;
+    border: 3px inset #ff84a5d9;
     padding: .8rem 2rem;
     font-size: 2rem;
     border-radius: 2rem;
-    background-color: rgba(128, 128, 0, 0.6);
+    background-color: #ff84a5d9;
     font-weight: 900;
     transition: .3s;
     box-shadow: 0 0 15px #00000078;
 
 }
 .menuBtn:hover {
-    background-color: rgb(102, 102, 0);
+    background-color: #c24a6ad9;
     color: #ffffffc9;
     cursor: pointer;
-}
-.easyBtn {
-    margin-top: 2rem;
+    box-shadow: 0 0 20px #ff84a5d9;
 }
 .easyInfo, .hardInfo {
     position: absolute;
-    width: 150px;
+    width: 170px;
     padding: .5rem;
     background-color: rgba(0, 0, 0, 0.5);
     color: rgba(255, 255, 255, 0.9);
     border-radius: 1rem;
     box-shadow: 0 0 10px #000000b3;
+    letter-spacing: 1px;
+    top: 30%;
+}
+#gameInfo, #nameInfo {
+    width: 380px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-top: 1rem;
 }
 .hide{
     display: none;
@@ -88,7 +116,7 @@ body {
 }
 .mediaIcon:hover {
     transform: rotate(360deg) scale(1.2) translate(4px, 4px);
-    box-shadow: 0 0 15px olive;
+    box-shadow: 0 0 20px #ff84a5d9;
     cursor: pointer;
 }
 #signature {

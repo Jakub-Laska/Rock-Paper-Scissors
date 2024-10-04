@@ -2,6 +2,9 @@ let startBtn = document.querySelector('.startBtn');
 let easyBtn = document.querySelector('.easyBtn');
 let hardBtn = document.querySelector('.hardBtn');
 let backBtn = document.querySelector('.goBack');
+let gameInfo = document.querySelector('#gameInfo');
+let nameInfo = document.querySelector('#nameInfo');
+
 
 //menu function responsible for showing buttons
 startBtn.addEventListener('click', showBtn);
@@ -10,7 +13,10 @@ function showBtn() {
     easyBtn.style.display = 'block';
     hardBtn.style.display = 'block';
     backBtn.style.display = 'block';
+    nameInfo.style.display = 'block';
     startBtn.style.display = 'none';
+    gameInfo.style.display = 'none';
+    
 }
 //menu function responsible for hiding buttons
 backBtn.addEventListener('click', hideBtn);
@@ -18,7 +24,9 @@ function hideBtn() {
     easyBtn.style.display = 'none';
     hardBtn.style.display = 'none';
     backBtn.style.display = 'none';
+    nameInfo.style.display = 'none';
     startBtn.style.display = 'block';
+    gameInfo.style.display = 'block';
 }
 //functions responsible for showing description of the game modes
 let easyInfo = document.querySelector('.easyInfo');
