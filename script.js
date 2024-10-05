@@ -88,8 +88,8 @@ function showGameEasy() {
 // get players choice
 // which card player chose and save that choice
 // queryselectorALL player cards then arrow function foreach addeventlistener click getplayerchoice function
-let playerCard = document.querySelectorAll('.')
-let playerChoice;
+let playerCard = document.querySelectorAll('.player')
+let playerChoice; 
 function getPlayerChoice() {
     if (playerCard.innerHTML === rock) {
         playerChoice = 'rock';
