@@ -85,21 +85,41 @@ function showGameEasy() {
     gameInterface.style.display = 'flex';
 }
 
-// get players choice
-// which card player chose and save that choice
-// queryselectorALL player cards then arrow function foreach addeventlistener click getplayerchoice function
-let playerCard = document.querySelectorAll('.')
+let rockCard = document.querySelector('#playerRock');
+let paperCard = document.querySelector('#playerPaper');
+let scissorsCard = document.querySelector('#playerScissors');
+const playerCards = [rockCard, paperCard, scissorsCard];
+
 let playerChoice;
-function getPlayerChoice() {
-    if (playerCard.innerHTML === rock) {
-        playerChoice = 'rock';
-    } else if (playerCard.innerHTML === paper) {
-        playerChoice = 'paper';
-    } else {
-        playerChoice = 'scissors';
-    }
-    }
-console.log(playerChoice);
+
+rockCard.addEventListener('click', rockChoice);
+paperCard.addEventListener('click', paperChoice);
+scissorsCard.addEventListener('click', scissorsChoice);
+
+function rockChoice() {
+    playerChoice = 'rock';
+    console.log(playerChoice);
+    botChoice();
+}
+function paperChoice() {
+    playerChoice = 'paper';
+    console.log(playerChoice);
+    botChoice();
+}
+function scissorsChoice() {
+    playerChoice = 'scissors';
+    console.log(playerChoice);
+    botChoice();
+}
+
+function botChoice() {
+    const pickRandom = () => {
+    const numbers = [1, 2, 3];
+    const randomIndex = Math.floor(Math.random() * 3);
+    return numbers[randomIndex];
+    };
+    console.log(pickRandom());
+}
 
 // initialize bot animation
 // math random bot choice
