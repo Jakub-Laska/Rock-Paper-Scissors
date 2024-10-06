@@ -75,7 +75,7 @@ function showLoadingHard() {
     menu.style.display = 'none';
     loadingScreen.style.display = 'block';
     
-    setTimeout(showGameHard, 4000);
+    setTimeout(showGameHard, 3000);
 }
 // easy game mode
 let gameInterface = document.querySelector('#game');
@@ -84,45 +84,84 @@ function showGameEasy() {
     loadingScreen.style.display = 'none';
     gameInterface.style.display = 'flex';
 }
-
+// function which gets player's choice
 let rockCard = document.querySelector('#playerRock');
 let paperCard = document.querySelector('#playerPaper');
 let scissorsCard = document.querySelector('#playerScissors');
+let rockCardBot = document.querySelector('#botRock');
+let paperCardBot = document.querySelector('#botPaper');
+let scissorsCardBot = document.querySelector('#botScissors');
 const playerCards = [rockCard, paperCard, scissorsCard];
-
 let playerChoice;
-
 rockCard.addEventListener('click', rockChoice);
 paperCard.addEventListener('click', paperChoice);
 scissorsCard.addEventListener('click', scissorsChoice);
-
 function rockChoice() {
     playerChoice = 'rock';
     console.log(playerChoice);
-    botChoice();
+    getRandomChoice();
+    hideOtherCards();
 }
 function paperChoice() {
     playerChoice = 'paper';
     console.log(playerChoice);
-    botChoice();
+    getRandomChoice();
+    hideOtherCards();
 }
 function scissorsChoice() {
     playerChoice = 'scissors';
     console.log(playerChoice);
-    botChoice();
+    getRandomChoice();
+    hideOtherCards();
 }
-
-function botChoice() {
-    const pickRandom = () => {
+// hides not selected cards
+function hideOtherCards() {
+    if (playerChoice == 'rock') {
+        paperCard.style.display = 'none';
+        scissorsCard.style.display = 'none';
+    } else if (playerChoice == 'paper') {
+        rockCard.style.display = 'none';
+        scissorsCard.style.display = 'none';
+    } else {
+        paperCard.style.display = 'none';
+        rockCard.style.display = 'none';
+    }
+}
+// function generating random number between 1, 2, 3
+let randomChoice;
+function getRandomChoice() {
     const numbers = [1, 2, 3];
     const randomIndex = Math.floor(Math.random() * 3);
-    return numbers[randomIndex];
-    };
-    console.log(pickRandom());
+    randomChoice = numbers[randomIndex];
+    console.log(randomChoice);
+    getBotChoice();
 }
-
+// function which determines the choice of a bot
+let botChoice;
+function getBotChoice() {
+    if (randomChoice == 1) {
+        botChoice = 'rock';
+    } else if (randomChoice == 2) {
+        botChoice = 'paper';
+    } else {
+        botChoice = 'scissors'
+    }
+    console.log(botChoice);
+    hideBotCards();
+}
+function hideBotCards() {
+    if (botChoice == 'rock') {
+        paperCardBot.style.display = 'none';
+        scissorsCardBot.style.display = 'none';
+    } else if (botChoice == 'paper') {
+        rockCardBot.style.display = 'none';
+        scissorsCardBot.style.display = 'none';
+    } else {
+        paperCardBot.style.display = 'none';
+        rockCardBot.style.display = 'none';
+    }
+}
 // initialize bot animation
-// math random bot choice
 // create game logic what beats what and draws
 // check who wins
 // show message who wins
