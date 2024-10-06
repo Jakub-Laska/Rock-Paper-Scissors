@@ -148,7 +148,9 @@ function getBotChoice() {
     }
     console.log(botChoice);
     hideBotCards();
+    disableListeners();
 }
+// hides bot cards which were not picked
 function hideBotCards() {
     if (botChoice == 'rock') {
         paperCardBot.style.display = 'none';
@@ -161,7 +163,16 @@ function hideBotCards() {
         rockCardBot.style.display = 'none';
     }
 }
-// initialize bot animation
+// function disable eventlisteners and hover
+function disableListeners() {
+    rockCard.removeEventListener('click', rockChoice);
+    paperCard.removeEventListener('click', paperChoice);
+    scissorsCard.removeEventListener('click', scissorsChoice);
+    playerCards.forEach(element => {
+        element.classList.toggle('disableHover');
+    });
+}
+
 // create game logic what beats what and draws
 // check who wins
 // show message who wins

@@ -163,11 +163,14 @@ body {
     text-align: center;
 }
 .player:hover {
-    background-color: #00000099;
     cursor: pointer;
-    color: white;
     transform: scale(1.1);
     opacity: 1;
+}
+.disableHover:hover {
+    cursor: default;
+    transform: scale(1);
+    opacity: .6;
 }
 .botCards {
     flex-direction: row-reverse;
