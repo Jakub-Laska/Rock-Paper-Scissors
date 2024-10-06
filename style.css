@@ -167,6 +167,7 @@ body {
     cursor: pointer;
     color: white;
     transform: scale(1.1);
+    opacity: 1;
 }
 .botCards {
     flex-direction: row-reverse;
@@ -174,9 +175,24 @@ body {
 .card {
     flex: 1;
     border-radius: 1rem;
-    border: solid 1px red;
     box-shadow: 0 0 20px #000000b3;
     max-width: 234px;
+    opacity: .6;
+}
+#playerRock, #botRock {
+    background-image: url(images/rock.png);
+    background-position: center;
+    background-size: cover;
+}
+#playerPaper, #botPaper {
+    background-image: url(images/paper.png);
+    background-position: center;
+    background-size: cover;
+}
+#playerScissors, #botScissors {
+    background-image: url(images/scissors.png);
+    background-position: center;
+    background-size: cover;
 }
 #roundCounter {
     position: absolute;
