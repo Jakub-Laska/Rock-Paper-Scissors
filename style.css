@@ -183,3 +183,10 @@ body {
     left: 30px;
     top: 20px;
 }
+#winScreen {
+    display: none;
+    min-width: 700px;
+    min-height: 600px;
+    opacity: .5;
+    background-color: black;
+}
