@@ -42,21 +42,25 @@
         </div>
         <div id="loading"><img id="loadingAnimation" src="images/loadingAnimation.gif" alt="loading animation"></div>
         <div id="game">
-            <p id="roundCounter">round counter:</p>
-            <p id="botWins">bot wins:</p>
-            <div class="botCards cards">
-                <span id="botRock" class="card"></span>
-                <span id="botPaper" class="card"></span>
-                <span id="botScissors" class="card"></span>
+            <p id="rounds">round counter: 0</p>
+            <p id="botWins">bot wins: 0</p>
+                <div class="botCards cards">
+                    <span id="botRock" class="card"></span>
+                    <span id="botPaper" class="card"></span>
+                    <span id="botScissors" class="card"></span>
+                </div>
+                <p id="versus">VS</p>
+                <div class="playerCards cards">
+                    <span id="playerRock" class="card player"></span>
+                    <span id="playerPaper" class="card player"></span>
+                    <span id="playerScissors" class="card player"></span>
+                </div>
+            <p id="playerWins">player wins: 0</p>
+            <div id="winScreen">
+                <p id="winScreenMessage">You won</p>
+                <button id="winScreenAgainBtn">next round</button>
+                <button id="winScreenMenuBtn">menu</button>
             </div>
-            <p id="versus">VS</p>
-            <div class="playerCards cards">
-                <span id="playerRock" class="card player"></span>
-                <span id="playerPaper" class="card player"></span>
-                <span id="playerScissors" class="card player"></span>
-            </div>
-            <p id="playerWins">player wins:</p>
-            <div id="winScreen"></div>
         </div>
     </section>
 </body>

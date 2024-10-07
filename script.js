@@ -93,9 +93,11 @@ let paperCardBot = document.querySelector('#botPaper');
 let scissorsCardBot = document.querySelector('#botScissors');
 const playerCards = [rockCard, paperCard, scissorsCard];
 let playerChoice;
+
 rockCard.addEventListener('click', rockChoice);
 paperCard.addEventListener('click', paperChoice);
 scissorsCard.addEventListener('click', scissorsChoice);
+
 function rockChoice() {
     playerChoice = 'rock';
     console.log(playerChoice);
@@ -171,11 +173,11 @@ function getBotChoice() {
     console.log(botChoice);
     hideBotCards();
     disableListeners();
-    gameOutcome();
+    getGameOutcome();
 }
 // function for the outcome
 let outcome;
-function gameOutcome() {
+function getGameOutcome() {
     if (playerChoice == 'rock' && botChoice == 'scissors' || playerChoice == 'paper' && botChoice == 'rock' || playerChoice == 'scissors' && botChoice == 'paper') {
         outcome = 'win';
     } else if (playerChoice == botChoice) {
@@ -184,10 +186,37 @@ function gameOutcome() {
         outcome = 'lose'
     }
     console.log(outcome);
+    setTimeout(showPostRoundScreen, 600);
+}
+// post round screen function
+let winScreenMessage = document.querySelector('#winScreenMessage')
+let winScreen = document.querySelector('#winScreen');
+let roundCounter = 0;
+let rounds = document.querySelector('#rounds');
+let playerWins = document.querySelector('#playerWins');
+let playerW = 0;
+let botWins = document.querySelector('#botWins')
+let botW = 0;
+
+function showPostRoundScreen() {
+    roundCounter++
+    winScreen.style.display = 'flex';
+    if (outcome == 'win'){
+        playerW++
+    } else if (outcome == 'lose') {
+        winScreenMessage.innerHTML = 'You lost';
+        botW++
+    } else {
+        winScreenMessage.innerHTML = 'It is a draw';
+    }
+    rounds.innerHTML = `round counter: ${roundCounter}`;
+    playerWins.innerHTML = `player wins: ${playerW}`
+    botWins.innerHTML = `bot wins: ${botW}`
 }
 
-
-// check who wins
+// add function which determines the post round screen based on win or lose
+// add function for calling functions
 // show message who wins
 // increment round counter, win counter
 // show final screen after bo5
+// tidy up

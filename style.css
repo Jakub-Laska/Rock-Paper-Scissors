@@ -197,15 +197,44 @@ body {
     background-position: center;
     background-size: cover;
 }
-#roundCounter {
+#rounds {
     position: absolute;
     left: 30px;
     top: 20px;
 }
 #winScreen {
-    display: none;
+    display: flex;
+    /* display: none; */
+    position: absolute;
+    border-radius: 4rem;
     min-width: 700px;
-    min-height: 600px;
-    opacity: .5;
-    background-color: black;
+    min-height: 550px;
+    background-color: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 1rem;
+}
+#winScreenMessage {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 4rem;
+}
+#winScreenAgainBtn, #winScreenMenuBtn {
+    padding: 1rem 2rem;
+    min-width: 180px;
+    border: 3px inset #ff84a5d9;
+    padding: .8rem 2rem;
+    border-radius: 2rem;
+    background-color: #ff84a5d9;
+    transition: .3s;
+    box-shadow: 0 0 10px #ffffff78;
+    font-weight: 900;
+}
+#winScreenAgainBtn:hover, #winScreenMenuBtn:hover{
+    background-color: #c24a6ad9;
+    color: #ffffffc9;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff84a5d9;
 }
