@@ -206,17 +206,18 @@ body {
     border-radius: 4rem;
     min-width: 700px;
     min-height: 550px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #5f0931b2;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
     gap: 1rem;
+    color: #00ad00;
 }
 #winScreenMessage {
     font-size: 3rem;
     font-weight: 900;
     margin-bottom: 4rem;
+    text-shadow: 5px 5px 20px rgb(0, 0, 0);
 }
 #winScreenAgainBtn, #winScreenMenuBtn {
     padding: 1rem 2rem;

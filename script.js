@@ -207,16 +207,19 @@ let botWins = document.querySelector('#botWins')
 let botW = '0';
 
 function showPostRoundScreen() {
-    roundCounter++
+    roundCounter++;
     winScreen.style.display = 'flex';
     if (outcome == 'win'){
         winScreenMessage.innerHTML = 'You Won';
-        playerW++
+        winScreenMessage.style.color = '#00ad00'
+        playerW++;
     } else if (outcome == 'lose') {
         winScreenMessage.innerHTML = 'You lost';
-        botW++
+        winScreenMessage.style.color = 'red'
+        botW++;
     } else {
         winScreenMessage.innerHTML = 'It is a draw';
+        winScreenMessage.style.color = 'white'
     }
     rounds.innerHTML = `round counter: ${roundCounter}`;
     playerWins.innerHTML = `player wins: ${playerW}`
@@ -271,9 +274,7 @@ function nextRound() {
     rockCardBot.style.display = 'flex';
     enableListeners();
 }
-// add function for game reset
-// make sure the buttons in menu reset
-// add function for next round 
+// win screen themes based on outcomes
 // messages on winscreen based on current wins
 // add function for calling functions
 // show message who wins
