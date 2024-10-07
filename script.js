@@ -255,6 +255,7 @@ function gameReset() {
     scissorsCardBot.style.display = 'flex';
     rockCardBot.style.display = 'flex';
     enableListeners();
+    hideBtn();
 }
 // win screen next round btn
 let nextRoundBtn = document.querySelector('#winScreenAgainBtn')

@@ -31,8 +31,7 @@ body {
     opacity: 1;
 }
 #menu {
-    display: none;
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -140,8 +139,7 @@ body {
     align-items: center;
 }
 #game {
-    /* display: none; */
-    display: flex;
+    display: none;
     background-color: #ffffff35;
     min-width: 800px;
     min-height: 700px;
@@ -203,8 +201,7 @@ body {
     top: 20px;
 }
 #winScreen {
-    display: flex;
-    /* display: none; */
+    display: none;
     position: absolute;
     border-radius: 4rem;
     min-width: 700px;
