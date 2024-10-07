@@ -278,9 +278,25 @@ function nextRound() {
     menuBtn.removeEventListener('click', goToMenu);
     enableListeners();
 }
-// win screen themes based on outcomes
-// messages on winscreen based on current wins
+// finish game
+function endGame() {
+    if (playerW == 3) {
+        //player win
+    } else if (botW == 3) {
+        //bot win
+    }
+
+}
+
+// congratulations you've won here is your reward click to redeem! and then some kind of a funny cat or smth // and then go back to menu btn
+// Robot won but don't worry you will get him next time here is your consolation prize click to redeem! // and then go back to menu
+
+// change theme button for a darker more calm one
+// designed by freepik make it a question mark hover 
+// ask zuza for a logo
+// change loading screen
+// add hardmode with different messages and "rewards"
 // add function for calling functions
-// show message who wins
-// show final screen after bo5
+// make it work on mobile
 // tidy up
+// add read more anchor with another page full of rock paper scissors history
