@@ -136,20 +136,6 @@ function getRandomChoice() {
     console.log(randomChoice);
     getBotChoice();
 }
-// function which determines the choice of a bot
-let botChoice;
-function getBotChoice() {
-    if (randomChoice == 1) {
-        botChoice = 'rock';
-    } else if (randomChoice == 2) {
-        botChoice = 'paper';
-    } else {
-        botChoice = 'scissors'
-    }
-    console.log(botChoice);
-    hideBotCards();
-    disableListeners();
-}
 // hides bot cards which were not picked
 function hideBotCards() {
     if (botChoice == 'rock') {
@@ -172,8 +158,35 @@ function disableListeners() {
         element.classList.toggle('disableHover');
     });
 }
+// function which determines the choice of a bot
+let botChoice;
+function getBotChoice() {
+    if (randomChoice == 1) {
+        botChoice = 'rock';
+    } else if (randomChoice == 2) {
+        botChoice = 'paper';
+    } else {
+        botChoice = 'scissors'
+    }
+    console.log(botChoice);
+    hideBotCards();
+    disableListeners();
+    gameOutcome();
+}
+// function for the outcome
+let outcome;
+function gameOutcome() {
+    if (playerChoice == 'rock' && botChoice == 'scissors' || playerChoice == 'paper' && botChoice == 'rock' || playerChoice == 'scissors' && botChoice == 'paper') {
+        outcome = 'win';
+    } else if (playerChoice == botChoice) {
+        outcome = 'draw'
+    } else {
+        outcome = 'lose'
+    }
+    console.log(outcome);
+}
 
-// create game logic what beats what and draws
+
 // check who wins
 // show message who wins
 // increment round counter, win counter
