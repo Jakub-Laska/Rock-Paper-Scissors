@@ -213,10 +213,25 @@ function showPostRoundScreen() {
     playerWins.innerHTML = `player wins: ${playerW}`
     botWins.innerHTML = `bot wins: ${botW}`
 }
+//winScreen menu button
+let menuBtn = document.querySelector('#winScreenMenuBtn')
+menuBtn.addEventListener('click', menuConfirmBtn);
 
-// add function which determines the post round screen based on win or lose
+function menuConfirmBtn() {
+    menuBtn.innerHTML = 'are you sure?'
+    menuBtn.addEventListener('click', goToMenu);
+}
+function goToMenu() {
+    winScreen.style.display = 'none';
+    gameInterface.style.display = 'none';
+    menu.style.display = 'flex';
+    menuBtn.innerHTML = 'menu';
+    menuBtn.removeEventListener('click', goToMenu);
+}
+
+//buttons logic
+// messages on winscreen based on current wins
 // add function for calling functions
 // show message who wins
-// increment round counter, win counter
 // show final screen after bo5
 // tidy up
