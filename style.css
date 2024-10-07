@@ -206,12 +206,12 @@ body {
     border-radius: 4rem;
     min-width: 700px;
     min-height: 550px;
-    background-color: #5f0931b2;
+    background-color: #000000ab;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    color: #00ad00;
+    box-shadow: 0 0 50px;
 }
 #winScreenMessage {
     font-size: 3rem;

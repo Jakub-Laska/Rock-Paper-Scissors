@@ -257,6 +257,8 @@ function gameReset() {
     paperCardBot.style.display = 'flex';
     scissorsCardBot.style.display = 'flex';
     rockCardBot.style.display = 'flex';
+    menuBtn.innerHTML = 'menu';
+    menuBtn.removeEventListener('click', goToMenu);
     enableListeners();
     hideBtn();
 }
@@ -272,6 +274,8 @@ function nextRound() {
     paperCardBot.style.display = 'flex';
     scissorsCardBot.style.display = 'flex';
     rockCardBot.style.display = 'flex';
+    menuBtn.innerHTML = 'menu';
+    menuBtn.removeEventListener('click', goToMenu);
     enableListeners();
 }
 // win screen themes based on outcomes
