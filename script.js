@@ -63,7 +63,7 @@ function showLoadingEasy() {
     menu.style.display = 'none';
     loadingScreen.style.display = 'flex';
     
-    setTimeout(showGameEasy, 3000);
+    setTimeout(showGameEasy, 100);
 }
 
 hardBtn.addEventListener('click', showLoadingHard);
@@ -160,6 +160,14 @@ function disableListeners() {
         element.classList.toggle('disableHover');
     });
 }
+function enableListeners() {
+    playerCards.forEach(element => {
+        element.classList.toggle('disableHover');
+    });
+    rockCard.addEventListener('click', rockChoice);
+    paperCard.addEventListener('click', paperChoice);
+    scissorsCard.addEventListener('click', scissorsChoice);
+}
 // function which determines the choice of a bot
 let botChoice;
 function getBotChoice() {
@@ -191,17 +199,18 @@ function getGameOutcome() {
 // post round screen function
 let winScreenMessage = document.querySelector('#winScreenMessage')
 let winScreen = document.querySelector('#winScreen');
-let roundCounter = 0;
+let roundCounter = '0';
 let rounds = document.querySelector('#rounds');
 let playerWins = document.querySelector('#playerWins');
-let playerW = 0;
+let playerW = '0';
 let botWins = document.querySelector('#botWins')
-let botW = 0;
+let botW = '0';
 
 function showPostRoundScreen() {
     roundCounter++
     winScreen.style.display = 'flex';
     if (outcome == 'win'){
+        winScreenMessage.innerHTML = 'You Won';
         playerW++
     } else if (outcome == 'lose') {
         winScreenMessage.innerHTML = 'You lost';
@@ -219,6 +228,7 @@ menuBtn.addEventListener('click', menuConfirmBtn);
 
 function menuConfirmBtn() {
     menuBtn.innerHTML = 'are you sure?'
+    menuBtn.style.fontSize = '1.1rem';
     menuBtn.addEventListener('click', goToMenu);
 }
 function goToMenu() {
@@ -226,10 +236,43 @@ function goToMenu() {
     gameInterface.style.display = 'none';
     menu.style.display = 'flex';
     menuBtn.innerHTML = 'menu';
+    menuBtn.style.fontSize = '1rem';
     menuBtn.removeEventListener('click', goToMenu);
+    gameReset();
 }
+// function for a total game reset
+function gameReset() {
+    roundCounter = '0';
+    playerW = '0';
+    botW = '0';
+    rounds.innerHTML = `round counter: ${roundCounter}`;
+    playerWins.innerHTML = `player wins: ${playerW}`
+    botWins.innerHTML = `bot wins: ${botW}`
+    paperCard.style.display = 'flex';
+    scissorsCard.style.display = 'flex';
+    rockCard.style.display = 'flex';
+    paperCardBot.style.display = 'flex';
+    scissorsCardBot.style.display = 'flex';
+    rockCardBot.style.display = 'flex';
+    enableListeners();
+}
+// win screen next round btn
+let nextRoundBtn = document.querySelector('#winScreenAgainBtn')
+nextRoundBtn.addEventListener('click', nextRound);
 
-//buttons logic
+function nextRound() {
+    winScreen.style.display = 'none';
+    paperCard.style.display = 'flex';
+    scissorsCard.style.display = 'flex';
+    rockCard.style.display = 'flex';
+    paperCardBot.style.display = 'flex';
+    scissorsCardBot.style.display = 'flex';
+    rockCardBot.style.display = 'flex';
+    enableListeners();
+}
+// add function for game reset
+// make sure the buttons in menu reset
+// add function for next round 
 // messages on winscreen based on current wins
 // add function for calling functions
 // show message who wins

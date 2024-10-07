@@ -162,7 +162,7 @@ body {
     gap: 1rem;
     text-align: center;
 }
-.player:hover {
+.playerHover:hover {
     cursor: pointer;
     transform: scale(1.1);
     opacity: 1;
@@ -231,6 +231,7 @@ body {
     transition: .3s;
     box-shadow: 0 0 10px #ffffff78;
     font-weight: 900;
+    font-size: 1rem;
 }
 #winScreenAgainBtn:hover, #winScreenMenuBtn:hover{
     background-color: #c24a6ad9;
