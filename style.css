@@ -150,6 +150,8 @@ body {
     justify-content: space-around;
     align-items: center;
     position: relative;
+    border: 5px inset #ff84a5d9;
+
 }
 .cards {
     display: flex;
@@ -206,12 +208,13 @@ body {
     border-radius: 4rem;
     min-width: 700px;
     min-height: 550px;
-    background-color: #000000ab;
+    background-color: #00000077;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    box-shadow: 0 0 50px;
+    box-shadow: 0 0 20px #000000b3;
+    border: 5px inset #ff84a5d9;
 }
 #winScreenMessage {
     font-size: 3rem;
@@ -236,4 +239,18 @@ body {
     color: #ffffffc9;
     cursor: pointer;
     box-shadow: 0 0 20px #ff84a5d9;
+}
+#endGameScreen {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    min-width: 800px;
+    min-height: 700px;
+    border-radius: 4rem;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px #000000b3;
+    padding: 2rem;
 }

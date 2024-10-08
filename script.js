@@ -100,19 +100,16 @@ scissorsCard.addEventListener('click', scissorsChoice);
 
 function rockChoice() {
     playerChoice = 'rock';
-    console.log(playerChoice);
     getRandomChoice();
     hideOtherCards();
 }
 function paperChoice() {
     playerChoice = 'paper';
-    console.log(playerChoice);
     getRandomChoice();
     hideOtherCards();
 }
 function scissorsChoice() {
     playerChoice = 'scissors';
-    console.log(playerChoice);
     getRandomChoice();
     hideOtherCards();
 }
@@ -135,7 +132,6 @@ function getRandomChoice() {
     const numbers = [1, 2, 3];
     const randomIndex = Math.floor(Math.random() * 3);
     randomChoice = numbers[randomIndex];
-    console.log(randomChoice);
     getBotChoice();
 }
 // hides bot cards which were not picked
@@ -178,7 +174,6 @@ function getBotChoice() {
     } else {
         botChoice = 'scissors'
     }
-    console.log(botChoice);
     hideBotCards();
     disableListeners();
     getGameOutcome();
@@ -186,15 +181,28 @@ function getBotChoice() {
 // function for the outcome
 let outcome;
 function getGameOutcome() {
+    roundCounter++;
     if (playerChoice == 'rock' && botChoice == 'scissors' || playerChoice == 'paper' && botChoice == 'rock' || playerChoice == 'scissors' && botChoice == 'paper') {
         outcome = 'win';
+        playerW++;
     } else if (playerChoice == botChoice) {
         outcome = 'draw'
     } else {
         outcome = 'lose'
+        botW++;
     }
-    console.log(outcome);
-    setTimeout(showPostRoundScreen, 600);
+    setTimeout(checkRound, 600);
+}
+// checks if the game has ended 
+function checkRound() {
+    if (playerW == 3) {
+
+
+    } else if (botW == 3) {
+
+    } else {
+        showPostRoundScreen();
+    }
 }
 // post round screen function
 let winScreenMessage = document.querySelector('#winScreenMessage')
@@ -207,24 +215,24 @@ let botWins = document.querySelector('#botWins')
 let botW = '0';
 
 function showPostRoundScreen() {
-    roundCounter++;
-    winScreen.style.display = 'flex';
-    if (outcome == 'win'){
-        winScreenMessage.innerHTML = 'You Won';
-        winScreenMessage.style.color = '#00ad00'
-        playerW++;
-    } else if (outcome == 'lose') {
-        winScreenMessage.innerHTML = 'You lost';
-        winScreenMessage.style.color = 'red'
-        botW++;
-    } else {
-        winScreenMessage.innerHTML = 'It is a draw';
-        winScreenMessage.style.color = 'white'
-    }
-    rounds.innerHTML = `round counter: ${roundCounter}`;
-    playerWins.innerHTML = `player wins: ${playerW}`
-    botWins.innerHTML = `bot wins: ${botW}`
+        winScreen.style.display = 'flex';
+        if (outcome == 'win'){
+            winScreenMessage.innerHTML = 'You Won';
+            winScreenMessage.style.color = '#00ad00'
+        } else if (outcome == 'lose') {
+            winScreenMessage.innerHTML = 'You lost';
+            winScreenMessage.style.color = 'red'
+        } else {
+            winScreenMessage.innerHTML = 'It is a draw';
+            winScreenMessage.style.color = 'white'
+        }
+        rounds.innerHTML = `round counter: ${roundCounter}`;
+        playerWins.innerHTML = `player wins: ${playerW}`
+        botWins.innerHTML = `bot wins: ${botW}`
+        console.log(playerW);
+        console.log(botW);
 }
+
 //winScreen menu button
 let menuBtn = document.querySelector('#winScreenMenuBtn')
 menuBtn.addEventListener('click', menuConfirmBtn);
@@ -278,20 +286,13 @@ function nextRound() {
     menuBtn.removeEventListener('click', goToMenu);
     enableListeners();
 }
-// finish game
-function endGame() {
-    if (playerW == 3) {
-        //player win
-    } else if (botW == 3) {
-        //bot win
-    }
-
-}
 
 // congratulations you've won here is your reward click to redeem! and then some kind of a funny cat or smth // and then go back to menu btn
 // Robot won but don't worry you will get him next time here is your consolation prize click to redeem! // and then go back to menu
 
 // change theme button for a darker more calm one
+// change gameinterface letters
+// change win screen
 // designed by freepik make it a question mark hover 
 // ask zuza for a logo
 // change loading screen
@@ -300,3 +301,4 @@ function endGame() {
 // make it work on mobile
 // tidy up
 // add read more anchor with another page full of rock paper scissors history
+// update readme and publish
