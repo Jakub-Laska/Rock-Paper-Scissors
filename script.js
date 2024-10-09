@@ -196,16 +196,26 @@ function getGameOutcome() {
 // checks if the game has ended 
 function checkRound() {
     if (playerW == 3) {
-
-
+        showWinScreenEasy();
     } else if (botW == 3) {
-
+        showLoseScreenEasy();
     } else {
         showPostRoundScreen();
     }
 }
+//win and lose screen functions
+let endGameScreen = document.querySelector('#endGameScreen');
+let endGameMessage = document.querySelector('#endGameMessage');
+function showWinScreenEasy() {
+    endGameMessage.innerHTML = 'congratulations you have won'
+    endGameScreen.style.display = 'flex';
+}
+function showLoseScreenEasy() {
+    endGameMessage.innerHTML = 'Robot won but do not worry you will get him next time'
+    endGameScreen.style.display = 'flex';
+}
 // post round screen function
-let winScreenMessage = document.querySelector('#winScreenMessage')
+let winScreenMessage = document.querySelector('#winScreenMessage');
 let winScreen = document.querySelector('#winScreen');
 let roundCounter = '0';
 let rounds = document.querySelector('#rounds');
@@ -276,6 +286,7 @@ function gameReset() {
     rockCardBot.style.display = 'flex';
     menuBtn.innerHTML = 'menu';
     menuBtn.removeEventListener('click', goToMenu);
+    endGameScreen.style.display = 'none';
     enableListeners();
     hideBtn();
 }
@@ -295,7 +306,14 @@ function nextRound() {
     menuBtn.removeEventListener('click', goToMenu);
     enableListeners();
 }
+// prize btn
+let endGamePrizeEasy = document.querySelector('#endGamePrizeEasy');
+endGamePrizeEasy.addEventListener('click', showPrizeEasy);
 
+function showPrizeEasy() {
+    endGamePrizeEasy.style.display = 'flex';
+    
+}
 // congratulations you've won here is your reward click to redeem! and then some kind of a funny cat or smth // and then go back to menu btn
 // Robot won but don't worry you will get him next time here is your consolation prize click to redeem! // and then go back to menu
 
