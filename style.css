@@ -46,6 +46,7 @@ body {
 }
 #changeTheme:hover {
     opacity: .8;
+    color: #4FB477;
 }
 
 #menu {

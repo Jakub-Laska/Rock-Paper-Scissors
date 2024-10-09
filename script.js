@@ -335,21 +335,22 @@ let changeThemeValue = 0;
 
 function changeTheme() {
     if (changeThemeValue == 0) {
-    changeThemeBtn.src = 'images/changeThemePink.png';
     changeThemeValue = 1;
     greenTheme();    
     } else if (changeThemeValue == 1) {
-        changeThemeBtn.src = 'images/changeThemeGreen.png';
         changeThemeValue = 0;    
         pinkTheme();
     }
 }
 
 function greenTheme() {
-    
+    changeThemeBtn.src = 'images/changeThemePink.png';
+    document.body.style.backgroundImage = 'url(images/backgroundGreen.jpg)';
 }
-
+    
 function pinkTheme() {
+    changeThemeBtn.src = 'images/changeThemeGreen.png';
+    document.body.style.backgroundImage = 'url(images/background.jpg)';
 
 }
 // change theme button for a darker more calm one
