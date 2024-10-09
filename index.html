@@ -40,7 +40,9 @@
                 <p id="signature">Jakub Laska</p>
             </footer>
         </div>
-        <div id="loading"><img id="loadingAnimation" src="images/loadingAnimation.gif" alt="loading animation"></div>
+        <div id="loading">
+            <img id="loadingAnimation" src="images/loadingAnimation.gif" alt="loading animation">
+        </div>
         <div id="game">
             <p id="rounds">round counter: 0</p>
             <p id="botWins">bot wins: 0</p>
@@ -65,11 +67,16 @@
                 <div id="endGameScreenContent">
                     <p id="endGameMessage">congratulations you've won</p>
                     <p>here is your Prize tap to claim</p>
-                    <button id="endGamePrizeBtn">claim your prize</button>
+                    <button id="endGamePrizeBtnWin">claim your prize</button>
+                    <button id="endGamePrizeBtnLose">claim your prize</button>
                     <p>also try your luck in hard mode</p>
                     <button id="endGameMenuBtn">menu</button>
                 </div>
-                <div><video id="endGamePrizeEasy" src="images/easyPrize.mp4" autoplay loop muted></video></div>
+                <div>
+                    <video id="easyPrizeVideoWin" src="images/easyPrize.mp4" autoplay loop muted></video>
+                    <video id="easyPrizeVideoLose" src="images/easyPrizeLose.mp4" autoplay loop muted></video>
+                    <button id="easyPrizeMenuBtn">menu</button>
+                </div>
             </div>
         </div>
     </section>

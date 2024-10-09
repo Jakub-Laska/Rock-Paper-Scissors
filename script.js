@@ -63,7 +63,7 @@ function showLoadingEasy() {
     menu.style.display = 'none';
     loadingScreen.style.display = 'flex';
     
-    setTimeout(showGameEasy, 100);
+    setTimeout(showGameEasy, 3000);
 }
 
 hardBtn.addEventListener('click', showLoadingHard);
@@ -196,11 +196,11 @@ function getGameOutcome() {
 // checks if the game has ended 
 function checkRound() {
     if (playerW == 3) {
-        showWinScreenEasy();
+        setTimeout(showWinScreenEasy, 400);
     } else if (botW == 3) {
-        showLoseScreenEasy();
+        setTimeout(showLoseScreenEasy, 400);
     } else {
-        showPostRoundScreen();
+        setTimeout(showPostRoundScreen, 400);
     }
 }
 //win and lose screen functions
@@ -209,10 +209,14 @@ let endGameMessage = document.querySelector('#endGameMessage');
 function showWinScreenEasy() {
     endGameMessage.innerHTML = 'congratulations you have won'
     endGameScreen.style.display = 'flex';
+    endGamePrizeEasyWinBtn.style.display = 'flex';
+    endGamePrizeEasyLoseBtn.style.display = 'none';
 }
 function showLoseScreenEasy() {
     endGameMessage.innerHTML = 'Robot won but do not worry you will get him next time'
     endGameScreen.style.display = 'flex';
+    endGamePrizeEasyLoseBtn.style.display = 'flex';
+    endGamePrizeEasyWinBtn.style.display = 'none';
 }
 // post round screen function
 let winScreenMessage = document.querySelector('#winScreenMessage');
@@ -246,9 +250,10 @@ function showPostRoundScreen() {
 //winScreen menu button
 let menuBtn = document.querySelector('#winScreenMenuBtn');
 let endGameMenuBtn = document.querySelector('#endGameMenuBtn');
+let easyPrizeMenuBtn = document.querySelector('#easyPrizeMenuBtn');
 menuBtn.addEventListener('click', menuConfirmBtn);
 endGameMenuBtn.addEventListener('click', menuConfirmBtn);
-
+easyPrizeMenuBtn.addEventListener('click', goToMenu);
 
 function menuConfirmBtn() {
     menuBtn.innerHTML = 'are you sure?'
@@ -261,6 +266,8 @@ function menuConfirmBtn() {
 function goToMenu() {
     winScreen.style.display = 'none';
     gameInterface.style.display = 'none';
+    easyPrizeWinVideo.style.display = 'none';
+    easyPrizeMenuBtn.style.display = 'none';
     menu.style.display = 'flex';
     menuBtn.innerHTML = 'menu';
     endGameMenuBtn.innerHTML = 'menu';
@@ -307,16 +314,25 @@ function nextRound() {
     enableListeners();
 }
 // prize btn
-let endGamePrizeEasy = document.querySelector('#endGamePrizeEasy');
-endGamePrizeEasy.addEventListener('click', showPrizeEasy);
-
-function showPrizeEasy() {
-    endGamePrizeEasy.style.display = 'flex';
-    
+let endGamePrizeEasyWinBtn = document.querySelector('#endGamePrizeBtnWin');
+endGamePrizeEasyWinBtn.addEventListener('click', showPrizeWinEasy);
+let easyPrizeWinVideo = document.querySelector('#easyPrizeVideoWin');
+function showPrizeWinEasy() {
+    easyPrizeWinVideo.style.display = 'block';
+    easyPrizeMenuBtn.style.display = 'block';
+}
+let endGamePrizeEasyLoseBtn = document.querySelector('#endGamePrizeBtnLose');
+endGamePrizeEasyLoseBtn.addEventListener('click', showPrizeLoseEasy);
+let easyPrizeLoseVideo= document.querySelector('#easyPrizeVideoLose');
+function showPrizeLoseEasy() {
+    easyPrizeLoseVideo.style.display = 'block';
+    easyPrizeMenuBtn.style.display = 'block';
 }
 // congratulations you've won here is your reward click to redeem! and then some kind of a funny cat or smth // and then go back to menu btn
 // Robot won but don't worry you will get him next time here is your consolation prize click to redeem! // and then go back to menu
 
+// prize btn in endgame screen 
+// style endgame screen
 // change theme button for a darker more calm one
 // change gameinterface letters
 // change win screen
