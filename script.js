@@ -328,7 +328,30 @@ function showPrizeLoseEasy() {
     easyPrizeLoseVideo.style.display = 'block';
     easyPrizeMenuBtn.style.display = 'block';
 }
+// change theme
+let changeThemeBtn = document.querySelector('#changeTheme');
+changeThemeBtn.addEventListener('click', changeTheme);
+let changeThemeValue = 0;
 
+function changeTheme() {
+    if (changeThemeValue == 0) {
+    changeThemeBtn.src = 'images/changeThemePink.png';
+    changeThemeValue = 1;
+    greenTheme();    
+    } else if (changeThemeValue == 1) {
+        changeThemeBtn.src = 'images/changeThemeGreen.png';
+        changeThemeValue = 0;    
+        pinkTheme();
+    }
+}
+
+function greenTheme() {
+    
+}
+
+function pinkTheme() {
+
+}
 // change theme button for a darker more calm one
 // change gameinterface letters
 // change win screen
