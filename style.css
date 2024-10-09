@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     width: 100vw;
     height: 100vh;
@@ -10,26 +11,30 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #ff84a5d9;
-    background-image: url(images/background.jpg);   
+    background-image: url(images/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-#freepik{
+
+#freepik {
     color: rgba(255, 255, 255, 0.5);
     position: absolute;
     right: 20px;
     bottom: 20px;
     font-size: 12px;
 }
+
 .freepik {
     text-decoration: none;
     color: #ff00bb;
-    opacity: .5;
+    opacity: 0.5;
 }
+
 .freepik:hover {
     opacity: 1;
 }
+
 #menu {
     display: flex;
     flex-direction: column;
@@ -45,11 +50,13 @@ body {
     position: relative;
     border: 5px inset #ff84a5d9;
 }
+
 #menuLabel {
     font-weight: 900;
     font-size: 3rem;
     letter-spacing: 1px;
 }
+
 #menuButtons {
     width: 300px;
     height: 300px;
@@ -58,35 +65,40 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 .startBtn {
     margin-top: 5rem;
 }
+
 #playModes {
     display: flex;
     flex-direction: column;
-    gap: .4rem;
+    gap: 0.4rem;
 }
+
 .menuBtn {
     border: 3px inset #ff84a5d9;
-    padding: .8rem 2rem;
+    padding: 0.8rem 2rem;
     font-size: 2rem;
     border-radius: 2rem;
     background-color: #ff84a5d9;
     font-weight: 900;
-    transition: .3s;
+    transition: 0.3s;
     box-shadow: 0 0 15px #00000078;
-
 }
+
 .menuBtn:hover {
     background-color: #c24a6ad9;
     color: #ffffffc9;
     cursor: pointer;
     box-shadow: 0 0 20px #ff84a5d9;
 }
-.easyInfo, .hardInfo {
+
+.easyInfo,
+.hardInfo {
     position: absolute;
     width: 170px;
-    padding: .5rem;
+    padding: 0.5rem;
     background-color: rgba(0, 0, 0, 0.4);
     color: rgba(255, 255, 255, 0.9);
     border-radius: 1rem;
@@ -94,35 +106,43 @@ body {
     letter-spacing: 1px;
     top: 30%;
 }
-#gameInfo, #nameInfo {
+
+#gameInfo,
+#nameInfo {
     width: 380px;
     font-weight: 900;
     letter-spacing: 1px;
     margin-top: 1rem;
 }
-.hide{
+
+.hide {
     display: none;
 }
+
 #media {
     display: flex;
     gap: 1rem;
     padding: 1rem;
 }
+
 .mediaIcon {
     max-width: 45px;
     max-height: 45px;
     border-radius: 100%;
-    transition: .5s;
+    transition: 0.5s;
 }
+
 .mediaIcon:hover {
     transform: rotate(360deg) scale(1.2) translate(4px, 4px);
     box-shadow: 0 0 20px #ff84a5d9;
     cursor: pointer;
 }
+
 #signature {
     font-size: 1rem;
     color: #0000004d;
 }
+
 #loading {
     display: none;
     /* filter: brightness(.9); */
@@ -139,6 +159,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 #game {
     display: none;
     background-color: #ffffff35;
@@ -152,8 +173,8 @@ body {
     align-items: center;
     position: relative;
     border: 5px inset #ff84a5d9;
-
 }
+
 .cards {
     display: flex;
     flex-direction: row;
@@ -163,46 +184,58 @@ body {
     gap: 1rem;
     text-align: center;
 }
+
 .playerHover:hover {
     cursor: pointer;
     transform: scale(1.1);
     opacity: 1;
 }
+
 .disableHover:hover {
     cursor: default;
     transform: scale(1);
-    opacity: .6;
+    opacity: 0.6;
 }
+
 .botCards {
     flex-direction: row-reverse;
 }
+
 .card {
     flex: 1;
     border-radius: 1rem;
     box-shadow: 0 0 20px #000000b3;
     max-width: 234px;
-    opacity: .6;
+    opacity: 0.6;
 }
-#playerRock, #botRock {
+
+#playerRock,
+#botRock {
     background-image: url(images/rock.png);
     background-position: center;
     background-size: cover;
 }
-#playerPaper, #botPaper {
+
+#playerPaper,
+#botPaper {
     background-image: url(images/paper.png);
     background-position: center;
     background-size: cover;
 }
-#playerScissors, #botScissors {
+
+#playerScissors,
+#botScissors {
     background-image: url(images/scissors.png);
     background-position: center;
     background-size: cover;
 }
+
 #rounds {
     position: absolute;
     left: 30px;
     top: 20px;
 }
+
 #winScreen {
     display: none;
     position: absolute;
@@ -217,32 +250,44 @@ body {
     box-shadow: 0 0 20px #000000b3;
     border: 5px inset #ff84a5d9;
 }
-#winScreenMessage, #endGameMessage {
+
+#winScreenMessage,
+#endGameMessage {
     font-size: 3rem;
     font-weight: 900;
     margin-bottom: 4rem;
     text-shadow: 5px 5px 20px rgb(0, 0, 0);
 }
-#winScreenAgainBtn, #winScreenMenuBtn,
-#endGamePrizeBtnWin, #endGameMenuBtn, #endGamePrizeBtnLose {
+
+#winScreenAgainBtn,
+#winScreenMenuBtn,
+#endGamePrizeBtnWin,
+#endGameMenuBtn,
+#endGamePrizeBtnLose {
     padding: 1rem 2rem;
     min-width: 180px;
     border: 3px inset #ff84a5d9;
-    padding: .8rem 2rem;
+    padding: 0.8rem 2rem;
     border-radius: 2rem;
     background-color: #ff84a5d9;
-    transition: .3s;
+    transition: 0.3s;
     box-shadow: 0 0 10px #ffffff78;
     font-weight: 900;
     font-size: 1rem;
 }
-#winScreenAgainBtn:hover, #winScreenMenuBtn:hover,
-#endGamePrizeBtnWin:hover, #endGameMenuBtn:hover, #easyPrizeMenuBtn:hover, #endGamePrizeBtnLose:hover {
+
+#winScreenAgainBtn:hover,
+#winScreenMenuBtn:hover,
+#endGamePrizeBtnWin:hover,
+#endGameMenuBtn:hover,
+#easyPrizeMenuBtn:hover,
+#endGamePrizeBtnLose:hover {
     background-color: #c24a6ad9;
     color: #ffffffc9;
     cursor: pointer;
     box-shadow: 0 0 20px #ff84a5d9;
 }
+
 #endGameScreen {
     position: absolute;
     display: none;
@@ -259,6 +304,7 @@ body {
     padding: 2rem;
     border: 5px inset #ff84a5d9;
 }
+
 #easyPrizeVideoWin {
     display: none;
     width: 100%;
@@ -269,6 +315,7 @@ body {
     top: 0;
     border-radius: 3.8rem;
 }
+
 #easyPrizeVideoLose {
     display: none;
     width: 100%;
@@ -279,6 +326,7 @@ body {
     top: 0;
     border-radius: 3.8rem;
 }
+
 #easyPrizeMenuBtn {
     display: none;
     position: absolute;
@@ -286,16 +334,18 @@ body {
     top: 80%;
     border: 3px inset #ff84a5d9;
     background-color: #ff84a5d9;
-    transition: .3s;
+    transition: 0.3s;
     box-shadow: 0 0 10px #ffffff78;
     font-weight: 900;
     font-size: 1rem;
-    padding: .8rem 2rem;
+    padding: 0.8rem 2rem;
     border-radius: 2rem;
 }
+
 #endGamePrizeBtnLose {
     display: none;
 }
+
 #endGameScreenContent {
     display: flex;
     flex-direction: column;

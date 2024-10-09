@@ -16,7 +16,7 @@ function showBtn() {
     nameInfo.style.display = 'block';
     startBtn.style.display = 'none';
     gameInfo.style.display = 'none';
-    
+
 }
 //menu function responsible for hiding buttons
 backBtn.addEventListener('click', hideBtn);
@@ -59,10 +59,10 @@ easyBtn.addEventListener('click', showLoadingEasy);
 
 function showLoadingEasy() {
     let menu = document.querySelector('#menu');
-    
+
     menu.style.display = 'none';
     loadingScreen.style.display = 'flex';
-    
+
     setTimeout(showGameEasy, 3000);
 }
 
@@ -71,10 +71,10 @@ hardBtn.addEventListener('click', showLoadingHard);
 function showLoadingHard() {
     let menu = document.querySelector('#menu');
     let loadingScreen = document.querySelector('#loading')
-    
+
     menu.style.display = 'none';
     loadingScreen.style.display = 'block';
-    
+
     setTimeout(showGameHard, 3000);
 }
 // easy game mode
@@ -229,22 +229,22 @@ let botWins = document.querySelector('#botWins')
 let botW = '0';
 
 function showPostRoundScreen() {
-        winScreen.style.display = 'flex';
-        if (outcome == 'win'){
-            winScreenMessage.innerHTML = 'You Won';
-            winScreenMessage.style.color = '#00ad00'
-        } else if (outcome == 'lose') {
-            winScreenMessage.innerHTML = 'You lost';
-            winScreenMessage.style.color = 'red'
-        } else {
-            winScreenMessage.innerHTML = 'It is a draw';
-            winScreenMessage.style.color = 'white'
-        }
-        rounds.innerHTML = `round counter: ${roundCounter}`;
-        playerWins.innerHTML = `player wins: ${playerW}`
-        botWins.innerHTML = `bot wins: ${botW}`
-        console.log(playerW);
-        console.log(botW);
+    winScreen.style.display = 'flex';
+    if (outcome == 'win') {
+        winScreenMessage.innerHTML = 'You Won';
+        winScreenMessage.style.color = '#00ad00'
+    } else if (outcome == 'lose') {
+        winScreenMessage.innerHTML = 'You lost';
+        winScreenMessage.style.color = 'red'
+    } else {
+        winScreenMessage.innerHTML = 'It is a draw';
+        winScreenMessage.style.color = 'white'
+    }
+    rounds.innerHTML = `round counter: ${roundCounter}`;
+    playerWins.innerHTML = `player wins: ${playerW}`
+    botWins.innerHTML = `bot wins: ${botW}`
+    console.log(playerW);
+    console.log(botW);
 }
 
 //winScreen menu button
@@ -323,22 +323,17 @@ function showPrizeWinEasy() {
 }
 let endGamePrizeEasyLoseBtn = document.querySelector('#endGamePrizeBtnLose');
 endGamePrizeEasyLoseBtn.addEventListener('click', showPrizeLoseEasy);
-let easyPrizeLoseVideo= document.querySelector('#easyPrizeVideoLose');
+let easyPrizeLoseVideo = document.querySelector('#easyPrizeVideoLose');
 function showPrizeLoseEasy() {
     easyPrizeLoseVideo.style.display = 'block';
     easyPrizeMenuBtn.style.display = 'block';
 }
-// congratulations you've won here is your reward click to redeem! and then some kind of a funny cat or smth // and then go back to menu btn
-// Robot won but don't worry you will get him next time here is your consolation prize click to redeem! // and then go back to menu
 
-// prize btn in endgame screen 
-// style endgame screen
 // change theme button for a darker more calm one
 // change gameinterface letters
 // change win screen
 // designed by freepik make it a question mark hover 
 // ask zuza for a logo
-// change loading screen
 // add hardmode with different messages and "rewards"
 // add function for calling functions
 // make it work on mobile
