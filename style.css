@@ -31,7 +31,8 @@ body {
     opacity: 1;
 }
 #menu {
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -139,7 +140,8 @@ body {
     align-items: center;
 }
 #game {
-    display: none;
+    /* display: none; */
+    display: flex;
     background-color: #ffffff35;
     min-width: 800px;
     min-height: 700px;
@@ -216,13 +218,14 @@ body {
     box-shadow: 0 0 20px #000000b3;
     border: 5px inset #ff84a5d9;
 }
-#winScreenMessage {
+#winScreenMessage, #endGameMessage {
     font-size: 3rem;
     font-weight: 900;
     margin-bottom: 4rem;
     text-shadow: 5px 5px 20px rgb(0, 0, 0);
 }
-#winScreenAgainBtn, #winScreenMenuBtn {
+#winScreenAgainBtn, #winScreenMenuBtn,
+#endGamePrizeBtn, #endGameMenuBtn {
     padding: 1rem 2rem;
     min-width: 180px;
     border: 3px inset #ff84a5d9;
@@ -234,7 +237,8 @@ body {
     font-weight: 900;
     font-size: 1rem;
 }
-#winScreenAgainBtn:hover, #winScreenMenuBtn:hover{
+#winScreenAgainBtn:hover, #winScreenMenuBtn:hover,
+#endGamePrizeBtn:hover, #endGameMenuBtn:hover {
     background-color: #c24a6ad9;
     color: #ffffffc9;
     cursor: pointer;
@@ -244,13 +248,14 @@ body {
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 1rem;
+    justify-content: center;
     align-items: center;
     text-align: center;
     min-width: 800px;
     min-height: 700px;
     border-radius: 4rem;
-    background-color: #ffffff;
+    background-color: #ec99ca;
     box-shadow: 0 0 20px #000000b3;
     padding: 2rem;
 }

@@ -234,21 +234,30 @@ function showPostRoundScreen() {
 }
 
 //winScreen menu button
-let menuBtn = document.querySelector('#winScreenMenuBtn')
+let menuBtn = document.querySelector('#winScreenMenuBtn');
+let endGameMenuBtn = document.querySelector('#endGameMenuBtn');
 menuBtn.addEventListener('click', menuConfirmBtn);
+endGameMenuBtn.addEventListener('click', menuConfirmBtn);
+
 
 function menuConfirmBtn() {
     menuBtn.innerHTML = 'are you sure?'
+    endGameMenuBtn.innerHTML = 'are you sure?'
     menuBtn.style.fontSize = '1.1rem';
+    endGameMenuBtn.style.fontSize = '1.1rem';
     menuBtn.addEventListener('click', goToMenu);
+    endGameMenuBtn.addEventListener('click', goToMenu);
 }
 function goToMenu() {
     winScreen.style.display = 'none';
     gameInterface.style.display = 'none';
     menu.style.display = 'flex';
     menuBtn.innerHTML = 'menu';
+    endGameMenuBtn.innerHTML = 'menu';
     menuBtn.style.fontSize = '1rem';
+    endGameMenuBtn.style.fontSize = '1rem';
     menuBtn.removeEventListener('click', goToMenu);
+    endGameMenuBtn.removeEventListener('click', goToMenu);
     gameReset();
 }
 // function for a total game reset
