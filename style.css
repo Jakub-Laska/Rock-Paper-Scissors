@@ -187,6 +187,10 @@ body {
     align-items: center;
     position: relative;
     border: 5px inset #ff84a5d9;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 20px;
+    letter-spacing: 1px;
 }
 
 .cards {
