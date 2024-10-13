@@ -159,17 +159,11 @@ body {
 
 #loading {
     display: none;
-    /* filter: brightness(.9); */
-    /* opacity: .9; */
-    /* background-color: #ff84a5d9; */
-    /* background-image: url(images/loading.gif);    */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     min-width: 800px;
     min-height: 700px;
-    /* border-radius: 4rem; */
-    /* box-shadow: 0 0 20px #000000b3; */
     justify-content: center;
     align-items: center;
 }
@@ -371,5 +365,3 @@ body {
     align-items: center;
     gap: 1rem;
 }
-
-.greenTheme {}

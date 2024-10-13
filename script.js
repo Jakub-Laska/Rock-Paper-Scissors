@@ -346,6 +346,9 @@ function changeTheme() {
 function greenTheme() {
     changeThemeBtn.src = 'images/changeThemePink.png';
     document.body.style.backgroundImage = 'url(images/backgroundGreen.jpg)';
+    menu.style.borderColor = '#98DFAF';
+    startBtn.borderColor =  '#98DFAF';
+    menuBtn.borderColor =  '#98DFAF';
 }
     
 function pinkTheme() {
