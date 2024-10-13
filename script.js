@@ -342,20 +342,33 @@ function changeTheme() {
         pinkTheme();
     }
 }
-
 function greenTheme() {
-    changeThemeBtn.src = 'images/changeThemePink.png';
+let greenBtn = document.querySelectorAll('.greenBtn');
     document.body.style.backgroundImage = 'url(images/backgroundGreen.jpg)';
+    changeThemeBtn.src = 'images/changeThemePink.png';
     menu.style.borderColor = '#98DFAF';
-    startBtn.borderColor =  '#98DFAF';
-    menuBtn.borderColor =  '#98DFAF';
+    greenBtn.forEach(element => {
+        element.style.borderColor = '#98DFAF';
+        element.style.backgroundColor = '#98DFAF';
+        element.style.boxShadow = '0 0 15px #00000078';
+        element.addEventListener('mouseenter', () => {
+            element.style.boxShadow = ('0 0 20px #DEEFB7');
+            element.style.color = ('#DEEFB7');
+            element.style.backgroundColor = ('#2F7249');
+        });
+        element.addEventListener('mouseleave', () => {
+            element.style.boxShadow = ('0 0 20px #00000078');
+            element.style.color = ('black');
+            element.style.backgroundColor = ('#98DFAF');
+        });
+    });
 }
-    
 function pinkTheme() {
     changeThemeBtn.src = 'images/changeThemeGreen.png';
     document.body.style.backgroundImage = 'url(images/background.jpg)';
 
 }
+// make that the menu button on prize screen always show menu first
 // change theme button for a darker more calm one
 // change gameinterface letters
 // change win screen
