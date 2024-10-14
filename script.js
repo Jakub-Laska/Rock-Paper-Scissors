@@ -418,10 +418,8 @@ function pinkTheme() {
     });
 
 }
-// make that the menu button on prize screen always show menu first
-//get the excat colors of backgrounds for style
-// change theme button for a darker more calm one
-// change gameinterface letters
+// make background resolution lower for better optimalization
+// get the excat colors of backgrounds for style
 // change win screen
 // designed by freepik make it a question mark hover 
 // ask zuza for a logo
