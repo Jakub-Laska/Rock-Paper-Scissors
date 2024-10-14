@@ -343,10 +343,14 @@ function changeTheme() {
     }
 }
 function greenTheme() {
-let greenBtn = document.querySelectorAll('.greenBtn');
+    let greenBtn = document.querySelectorAll('.greenBtn');
+    let loadingAnimation = document.querySelector('#loadingAnimation');
     document.body.style.backgroundImage = 'url(images/backgroundGreen.jpg)';
     changeThemeBtn.src = 'images/changeThemePink.png';
-    menu.style.borderColor = '#98DFAF';
+    menu.style.borderColor = '#30734a';
+    loadingAnimation.src = 'images/loadingAnimationGreen.gif';
+    gameInterface.style.borderColor = '#30734a';
+    winScreen.style.borderColor = '#30734a';
     greenBtn.forEach(element => {
         element.style.borderColor = '#98DFAF';
         element.style.backgroundColor = '#98DFAF';
@@ -354,7 +358,7 @@ let greenBtn = document.querySelectorAll('.greenBtn');
         element.addEventListener('mouseenter', () => {
             element.style.boxShadow = ('0 0 20px #DEEFB7');
             element.style.color = ('#DEEFB7');
-            element.style.backgroundColor = ('#2F7249');
+            element.style.backgroundColor = ('#30734a');
         });
         element.addEventListener('mouseleave', () => {
             element.style.boxShadow = ('0 0 20px #00000078');
@@ -369,6 +373,7 @@ function pinkTheme() {
 
 }
 // make that the menu button on prize screen always show menu first
+//get the excat colors of backgrounds for style
 // change theme button for a darker more calm one
 // change gameinterface letters
 // change win screen
