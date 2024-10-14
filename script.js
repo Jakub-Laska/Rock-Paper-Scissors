@@ -345,7 +345,11 @@ function changeTheme() {
 function greenTheme() {
     let greenBtn = document.querySelectorAll('.greenBtn');
     let loadingAnimation = document.querySelector('#loadingAnimation');
+    let endGameScreen = document.querySelector('#endGameScreen');
+    let mediaIcon = document.querySelectorAll('.mediaIcon');
     document.body.style.backgroundImage = 'url(images/backgroundGreen.jpg)';
+    endGameScreen.style.backgroundColor = '#30734a'
+    endGameScreen.style.borderColor = '#30734a';
     changeThemeBtn.src = 'images/changeThemePink.png';
     menu.style.borderColor = '#30734a';
     loadingAnimation.src = 'images/loadingAnimationGreen.gif';
@@ -364,6 +368,15 @@ function greenTheme() {
             element.style.boxShadow = ('0 0 20px #00000078');
             element.style.color = ('black');
             element.style.backgroundColor = ('#98DFAF');
+        });
+    });
+    mediaIcon.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            element.style.boxShadow = ('0 0 20px #DEEFB7');
+        });
+        element.addEventListener('mouseleave', () => {
+            element.style.boxShadow = ('0 0 20px #00000078');
+
         });
     });
 }
