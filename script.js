@@ -343,6 +343,7 @@ function changeTheme() {
     }
 }
 function greenTheme() {
+    changeThemeBtn.src = 'images/changeThemePink.png';
     let greenBtn = document.querySelectorAll('.greenBtn');
     let loadingAnimation = document.querySelector('#loadingAnimation');
     let endGameScreen = document.querySelector('#endGameScreen');
@@ -350,7 +351,6 @@ function greenTheme() {
     document.body.style.backgroundImage = 'url(images/backgroundGreen.jpg)';
     endGameScreen.style.backgroundColor = '#30734a'
     endGameScreen.style.borderColor = '#30734a';
-    changeThemeBtn.src = 'images/changeThemePink.png';
     menu.style.borderColor = '#30734a';
     loadingAnimation.src = 'images/loadingAnimationGreen.gif';
     gameInterface.style.borderColor = '#30734a';
@@ -382,7 +382,40 @@ function greenTheme() {
 }
 function pinkTheme() {
     changeThemeBtn.src = 'images/changeThemeGreen.png';
+    let greenBtn = document.querySelectorAll('.greenBtn');
+    let loadingAnimation = document.querySelector('#loadingAnimation');
+    let endGameScreen = document.querySelector('#endGameScreen');
+    let mediaIcon = document.querySelectorAll('.mediaIcon');
     document.body.style.backgroundImage = 'url(images/background.jpg)';
+    endGameScreen.style.backgroundColor = '#ec99ca'
+    endGameScreen.style.borderColor = '#ff84a5d9';
+    menu.style.borderColor = '#ff84a5d9';
+    loadingAnimation.src = 'images/loadingAnimation.gif';
+    gameInterface.style.borderColor = '#ff84a5d9';
+    winScreen.style.borderColor = '#ff84a5d9';
+    greenBtn.forEach(element => {
+        element.style.borderColor = '#ff84a5d9';
+        element.style.backgroundColor = '#ff84a5d9';
+        element.style.boxShadow = '0 0 15px #00000078';
+        element.addEventListener('mouseenter', () => {
+            element.style.boxShadow = ('0 0 20px #ff84a5d9');
+            element.style.color = ('white');
+            element.style.backgroundColor = ('#c24a6ad9');
+        });
+        element.addEventListener('mouseleave', () => {
+            element.style.boxShadow = ('0 0 20px #00000078');
+            element.style.color = ('black');
+            element.style.backgroundColor = ('#ff84a5d9');
+        });
+    });
+    mediaIcon.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            element.style.boxShadow = ('0 0 20px #ff84a5d9');
+        });
+        element.addEventListener('mouseleave', () => {
+            element.style.boxShadow = ('0 0 20px #00000078');
+        });
+    });
 
 }
 // make that the menu button on prize screen always show menu first
