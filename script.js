@@ -418,6 +418,7 @@ function pinkTheme() {
     });
 
 }
+//
 // make background resolution lower for better optimalization
 // get the excat colors of backgrounds for style
 // change win screen
