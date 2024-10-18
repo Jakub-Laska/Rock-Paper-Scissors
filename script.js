@@ -54,33 +54,33 @@ function hideHardInfo() {
 }
 //loading screen for easy and hard mode
 let loadingScreen = document.querySelector('#loading')
+let menu = document.querySelector('#menu');
+let whichMode;
 
 easyBtn.addEventListener('click', showLoadingEasy);
-
 function showLoadingEasy() {
-    let menu = document.querySelector('#menu');
-
     menu.style.display = 'none';
     loadingScreen.style.display = 'flex';
-
     setTimeout(showGameEasy, 3000);
+    whichMode = 0;
 }
 
 hardBtn.addEventListener('click', showLoadingHard);
-
 function showLoadingHard() {
-    let menu = document.querySelector('#menu');
-    let loadingScreen = document.querySelector('#loading')
-
     menu.style.display = 'none';
-    loadingScreen.style.display = 'block';
-
+    loadingScreen.style.display = 'flex';
     setTimeout(showGameHard, 3000);
+    whichMode = 1;
 }
 // easy game mode
 let gameInterface = document.querySelector('#game');
 
 function showGameEasy() {
+    loadingScreen.style.display = 'none';
+    gameInterface.style.display = 'flex';
+}
+// hard game mode
+function showGameHard() {
     loadingScreen.style.display = 'none';
     gameInterface.style.display = 'flex';
 }
@@ -100,19 +100,76 @@ scissorsCard.addEventListener('click', scissorsChoice);
 
 function rockChoice() {
     playerChoice = 'rock';
-    getRandomChoice();
+    getRandomChoiceMode();
     hideOtherCards();
 }
 function paperChoice() {
     playerChoice = 'paper';
-    getRandomChoice();
+    getRandomChoiceMode();
     hideOtherCards();
 }
 function scissorsChoice() {
     playerChoice = 'scissors';
-    getRandomChoice();
+    getRandomChoiceMode();
     hideOtherCards();
 }
+
+
+function getRandomChoiceMode() {
+    if (whichMode == 0) {
+        getRandomChoice();
+    } else {
+        getRandomHardChoice();
+    }
+}
+let randomHardChoice;
+function getRandomHardChoice() {
+    const numbersHard = [1, 2];
+    const randomHardIndex = Math.floor(Math.random() * 2);
+    randomHardChoice = numbersHard[randomHardIndex];
+    getBotHardChoice();
+}
+let botHardChoice;
+function getBotHardChoice() {
+    if (playerChoice == 'rock') {
+        if (randomHardChoice == 1) {
+            botChoice = 'paper';
+        } else {
+            botChoice = 'scissors'
+        }
+    } else if (playerChoice == 'paper') {
+        if (randomHardChoice == 1) {
+            botChoice = 'scissors';
+        } else {
+            botChoice = 'rock'
+        }
+    } else {
+        if (randomHardChoice == 1) {
+            botChoice = 'rock';
+        } else {
+            botChoice = 'paper'
+        }
+    }
+    hideBotCards();
+    disableListeners();
+    getGameOutcome();
+}
+// function which determines the choice of a bot
+let botChoice;
+function getBotChoice() {
+    if (randomChoice == 1) {
+        botChoice = 'rock';
+    } else if (randomChoice == 2) {
+        botChoice = 'paper';
+    } else {
+        botChoice = 'scissors'
+    }
+    hideBotCards();
+    disableListeners();
+    getGameOutcome();
+}
+
+
 // hides not selected cards
 function hideOtherCards() {
     if (playerChoice == 'rock') {
@@ -134,6 +191,7 @@ function getRandomChoice() {
     randomChoice = numbers[randomIndex];
     getBotChoice();
 }
+
 // hides bot cards which were not picked
 function hideBotCards() {
     if (botChoice == 'rock') {
@@ -164,20 +222,7 @@ function enableListeners() {
     paperCard.addEventListener('click', paperChoice);
     scissorsCard.addEventListener('click', scissorsChoice);
 }
-// function which determines the choice of a bot
-let botChoice;
-function getBotChoice() {
-    if (randomChoice == 1) {
-        botChoice = 'rock';
-    } else if (randomChoice == 2) {
-        botChoice = 'paper';
-    } else {
-        botChoice = 'scissors'
-    }
-    hideBotCards();
-    disableListeners();
-    getGameOutcome();
-}
+
 // function for the outcome
 let outcome;
 function getGameOutcome() {
