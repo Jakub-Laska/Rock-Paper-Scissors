@@ -418,6 +418,7 @@ function pinkTheme() {
     });
 
 }
+// Too busy lately \ streak
 // get the excat colors of backgrounds for style
 // change win screen
 // designed by freepik make it a question mark hover 
