@@ -488,7 +488,5 @@ function pinkTheme() {
     });
 
 }
-// make it work on mobile
-// tidy up
 // add read more anchor with another page full of rock paper scissors history
 // update readme and publish
