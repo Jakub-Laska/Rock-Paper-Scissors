@@ -241,9 +241,17 @@ function getGameOutcome() {
 // checks if the game has ended 
 function checkRound() {
     if (playerW == 3) {
-        setTimeout(showWinScreenEasy, 400);
+        if (whichMode == 0) {
+            setTimeout(showWinScreenEasy, 400);
+        } else {
+            setTimeout(showWinScreenHard, 400);
+        }
     } else if (botW == 3) {
-        setTimeout(showLoseScreenEasy, 400);
+        if (whichMode == 0) {
+            setTimeout(showLoseScreenEasy, 400);
+        } else {
+            setTimeout(showLoseScreenHard, 400);
+        }
     } else {
         setTimeout(showPostRoundScreen, 400);
     }
@@ -251,17 +259,34 @@ function checkRound() {
 //win and lose screen functions
 let endGameScreen = document.querySelector('#endGameScreen');
 let endGameMessage = document.querySelector('#endGameMessage');
+let endGamePara = document.querySelector('.endGamePare');
 function showWinScreenEasy() {
     endGameMessage.innerHTML = 'congratulations you have won'
+    endGamePara.innerHTML = 'also try your luck in hard mode';
     endGameScreen.style.display = 'flex';
     endGamePrizeEasyWinBtn.style.display = 'flex';
     endGamePrizeEasyLoseBtn.style.display = 'none';
 }
 function showLoseScreenEasy() {
     endGameMessage.innerHTML = 'Robot won but do not worry you will get him next time'
+    endGamePara.innerHTML = 'also try your luck in hard mode';
     endGameScreen.style.display = 'flex';
     endGamePrizeEasyLoseBtn.style.display = 'flex';
     endGamePrizeEasyWinBtn.style.display = 'none';
+}
+function showWinScreenHard() {
+    endGameMessage.innerHTML = 'Nice luck, even hard mode is easy for you'
+    endGamePara.innerHTML = 'also try your luck in easy mode';
+    endGameScreen.style.display = 'flex';
+    endGamePrizeEasyWinBtn.style.display = 'flex';
+    endGamePrizeEasyLoseBtn.style.display = 'none';
+}
+function showLoseScreenHard() {
+    endGameMessage.innerHTML = 'You will get him next time'
+    endGamePara.innerHTML = 'also try your luck in easy mode';
+    endGameScreen.style.display = 'flex';
+    endGamePrizeEasyWinBtn.style.display = 'flex';
+    endGamePrizeEasyLoseBtn.style.display = 'none';
 }
 // post round screen function
 let winScreenMessage = document.querySelector('#winScreenMessage');
@@ -463,13 +488,6 @@ function pinkTheme() {
     });
 
 }
-// Too busy lately \ streak
-// get the excat colors of backgrounds for style
-// change win screen
-// designed by freepik make it a question mark hover 
-// ask zuza for a logo
-// add hardmode with different messages and "rewards"
-// add function for calling functions
 // make it work on mobile
 // tidy up
 // add read more anchor with another page full of rock paper scissors history
