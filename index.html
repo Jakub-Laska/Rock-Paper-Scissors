@@ -1,93 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<title>Rock Paper Scissors</title>
-<script type="module" src="script.js"></script>
-</head>
-<body>
-    <img id="changeTheme" src="images/changeThemeGreen.png" alt="lime" title="change theme">
-    <p id="freepik">designed by<a class="freepik"
-            href="https://www.freepik.com/free-photo/hand-models-showing-different-gestures-isolated_13827318.htm#fromView=search&page=1&position=13&uuid=f4b49868-0466-4558-be92-7f7b7f0cb5b7"
-            target="_blank">
-            freepik</a>
-        </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock Paper Scissors</title>
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <img
+      id="changeTheme"
+      src="images/moon.png"
+      alt="lime"
+      title="change theme"
+    />
+    <p id="freepik">
+      designed by<a
+        class="freepik"
+        href="https://www.freepik.com/free-photo/hand-models-showing-different-gestures-isolated_13827318.htm#fromView=search&page=1&position=13&uuid=f4b49868-0466-4558-be92-7f7b7f0cb5b7"
+        target="_blank"
+      >
+        freepik</a
+      >
+    </p>
     <section id="container">
-        <div id="menu">
-            <label id="menuLabel" for="startBtn">Rock Paper Scissors</label>
-            <p id="nameInfo" class="hide">The name "rock paper scissors" is simply a translation of the Japanese words
-                for the three gestures involved in the game</p>
-            <div id="menuButtons">
-                <div id="start">
-                    <p class="menuBtn startBtn greenBtn pinkBtn">start game</p>
-                </div>
-                <p id="gameInfo">The earliest form of "rock paper scissors"-style game originated in China and was
-                    subsequently
-                    imported into Japan, where it reached its modern standardized form, before being spread throughout
-                    the world in the early 20th century.</p>
-                <span class="easyInfo hide">standard rules of rock paper scissors (best of 5)</span>
-                <span class="hardInfo hide">no draws you either win or you lose (best of 5)</span>
-                <div id="playModes">
-                    <p class="menuBtn easyBtn hide greenBtn pinkBtn">easy mode</p>
-                    <p class="menuBtn hardBtn hide greenBtn pinkBtn">hard mode</p>
-                    <p class="menuBtn goBack hide greenBtn pinkBtn">go back</p>
-                </div>
-            </div>
-            <footer>
-                <p id="learnMore">learn more about this game</p>
-                <div id="media">
-                    <a href="https://github.com/Jakub-Laska" target="_blank">
-                        <img src="images/github.png" alt="github icon" class="mediaIcon"></a>
-                    <a href="https://www.linkedin.com/in/jakub-laska-b24639324/" target="_blank">
-                        <img src="images/linkedin.png" alt="linkedin icon" class="mediaIcon"></a>
-                    <a href="mailto:jakub.laska1911@gmail.com" target="_blank">
-                        <img src="images/gmail.png" alt="gmail icon" class="mediaIcon"></a>
-                </div>
-                <p id="signature">Jakub Laska</p>
-            </footer>
+      <div id="menu">
+        <label id="menuLabel" for="startBtn">Rock Paper Scissors</label>
+        <p id="nameInfo" class="hide">
+          The name "rock paper scissors" is simply a translation of the Japanese
+          words for the three gestures involved in the game
+        </p>
+        <div id="menuButtons">
+          <div id="start">
+            <p class="menuBtn startBtn greenBtn pinkBtn">start game</p>
+          </div>
+          <p id="gameInfo">
+            The earliest form of "rock paper scissors"-style game originated in
+            China and was subsequently imported into Japan, where it reached its
+            modern standardized form, before being spread throughout the world
+            in the early 20th century.
+          </p>
+          <span class="easyInfo hide"
+            >standard rules of rock paper scissors (best of 5)</span
+          >
+          <span class="hardInfo hide"
+            >no draws you either win or you lose (best of 5)</span
+          >
+          <div id="playModes">
+            <p class="menuBtn easyBtn hide greenBtn pinkBtn">easy mode</p>
+            <p class="menuBtn hardBtn hide greenBtn pinkBtn">hard mode</p>
+            <p class="menuBtn goBack hide greenBtn pinkBtn">go back</p>
+          </div>
         </div>
-        <div id="loading">
-            <img id="loadingAnimation" src="images/loadingAnimation.gif" alt="loading animation">
+        <footer>
+          <div id="media">
+            <a href="https://github.com/Jakub-Laska" target="_blank">
+              <img src="images/github.png" alt="github icon" class="mediaIcon"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/jakub-laska-b24639324/"
+              target="_blank"
+            >
+              <img
+                src="images/linkedin.png"
+                alt="linkedin icon"
+                class="mediaIcon"
+            /></a>
+            <a href="mailto:jakub.laska1911@gmail.com" target="_blank">
+              <img src="images/gmail.png" alt="gmail icon" class="mediaIcon"
+            /></a>
+          </div>
+          <p id="signature">Jakub Laska</p>
+        </footer>
+      </div>
+      <div id="loading">
+        <img
+          id="loadingAnimation"
+          src="images/loadingAnimation.gif"
+          alt="loading animation"
+        />
+      </div>
+      <div id="game">
+        <p id="rounds">round counter: 0</p>
+        <p id="botWins">bot wins: 0</p>
+        <div class="botCards cards">
+          <span id="botRock" class="card"></span>
+          <span id="botPaper" class="card"></span>
+          <span id="botScissors" class="card"></span>
         </div>
-        <div id="game">
-            <p id="rounds">round counter: 0</p>
-            <p id="botWins">bot wins: 0</p>
-            <div class="botCards cards">
-                <span id="botRock" class="card"></span>
-                <span id="botPaper" class="card"></span>
-                <span id="botScissors" class="card"></span>
-            </div>
-            <p id="versus">VS</p>
-            <div class="playerCards cards">
-                <span id="playerRock" class="card playerHover"></span>
-                <span id="playerPaper" class="card playerHover"></span>
-                <span id="playerScissors" class="card playerHover"></span>
-            </div>
-            <p id="playerWins">player wins: 0</p>
-            <div id="winScreen">
-                <p id="winScreenMessage">You won</p>
-                <button id="winScreenAgainBtn" class="greenBtn pinkBtn">next round</button>
-                <button id="winScreenMenuBtn" class="greenBtn pinkBtn">menu</button>
-            </div>
-            <div id="endGameScreen">
-                <div id="endGameScreenContent">
-                    <p id="endGameMessage">congratulations you've won</p>
-                    <p>here is your Prize tap to claim</p>
-                    <button id="endGamePrizeBtnWin" class="greenBtn pinkBtn">claim your prize</button>
-                    <button id="endGamePrizeBtnLose" class="greenBtn pinkBtn">claim your prize</button>
-                    <p class="endGamePara">also try your luck in hard mode</p>
-                    <button id="endGameMenuBtn" class="greenBtn pinkBtn">menu</button>
-                </div>
-                <div>
-                    <video id="easyPrizeVideoWin" src="images/easyPrize.mp4" autoplay loop muted></video>
-                    <video id="easyPrizeVideoLose" src="images/easyPrizeLose.mp4" autoplay loop muted></video>
-                    <button id="easyPrizeMenuBtn" class="greenBtn pinkBtn">menu</button>
-                </div>
-            </div>
+        <p id="versus">VS</p>
+        <div class="playerCards cards">
+          <span id="playerRock" class="card playerHover"></span>
+          <span id="playerPaper" class="card playerHover"></span>
+          <span id="playerScissors" class="card playerHover"></span>
         </div>
+        <p id="playerWins">player wins: 0</p>
+        <div id="winScreen">
+          <p id="winScreenMessage">You won</p>
+          <button id="winScreenAgainBtn" class="greenBtn pinkBtn">
+            next round
+          </button>
+          <button id="winScreenMenuBtn" class="greenBtn pinkBtn">menu</button>
+        </div>
+        <div id="endGameScreen">
+          <div id="endGameScreenContent">
+            <p id="endGameMessage">congratulations you've won</p>
+            <p>here is your Prize tap to claim</p>
+            <button id="endGamePrizeBtnWin" class="greenBtn pinkBtn">
+              claim your prize
+            </button>
+            <button id="endGamePrizeBtnLose" class="greenBtn pinkBtn">
+              claim your prize
+            </button>
+            <p class="endGamePara">also try your luck in hard mode</p>
+            <button id="endGameMenuBtn" class="greenBtn pinkBtn">menu</button>
+          </div>
+          <div>
+            <video
+              id="easyPrizeVideoWin"
+              src="images/easyPrize.mp4"
+              autoplay
+              loop
+              muted
+            ></video>
+            <video
+              id="easyPrizeVideoLose"
+              src="images/easyPrizeLose.mp4"
+              autoplay
+              loop
+              muted
+            ></video>
+            <button id="easyPrizeMenuBtn" class="greenBtn pinkBtn">menu</button>
+          </div>
+        </div>
+      </div>
     </section>
-</body>
-
+  </body>
 </html>
