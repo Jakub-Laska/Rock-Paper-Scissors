@@ -24,6 +24,7 @@ What I've Learned:
 - Enhancing user experience with animations and responsive design.
 - The importance of planning everything before starting to code to ensure a smoother development process and avoid potential issues down the line. 
 
+<!-- 
 _______/\\\\\\\_______/\\\_____________        
  ______\/////\\\______\/\\\_____________       
   __________\/\\\______\/\\\_____________      
@@ -32,4 +33,5 @@ _______/\\\\\\\_______/\\\_____________
      __________\/\\\______\/\\\_____________   
       ___/\\\___\/\\\______\/\\\_____________  
        __\//\\\\\\\\\_______\/\\\\\\\\\\\\\___ 
-        ___\/////////________\/////////////____
+        ___\/////////________\/////////////____ 
+-->
