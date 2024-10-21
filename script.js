@@ -58,7 +58,7 @@ easyBtn.addEventListener("click", showLoadingEasy);
 function showLoadingEasy() {
   menu.style.display = "none";
   loadingScreen.style.display = "flex";
-  setTimeout(showGameEasy, 3000);
+  setTimeout(showGameEasy, 2000);
   whichMode = 0;
 }
 
@@ -66,7 +66,7 @@ hardBtn.addEventListener("click", showLoadingHard);
 function showLoadingHard() {
   menu.style.display = "none";
   loadingScreen.style.display = "flex";
-  setTimeout(showGameHard, 3000);
+  setTimeout(showGameHard, 2000);
   whichMode = 1;
 }
 // easy game mode
