@@ -241,24 +241,24 @@ function getGameOutcome() {
 function checkRound() {
   if (playerW == 3) {
     if (whichMode == 0) {
-      setTimeout(showWinScreenEasy, 400);
+      setTimeout(showWinScreenEasy, 300);
     } else {
-      setTimeout(showWinScreenHard, 400);
+      setTimeout(showWinScreenHard, 300);
     }
   } else if (botW == 3) {
     if (whichMode == 0) {
-      setTimeout(showLoseScreenEasy, 400);
+      setTimeout(showLoseScreenEasy, 300);
     } else {
-      setTimeout(showLoseScreenHard, 400);
+      setTimeout(showLoseScreenHard, 300);
     }
   } else {
-    setTimeout(showPostRoundScreen, 400);
+    setTimeout(showPostRoundScreen, 300);
   }
 }
 //win and lose screen functions
 let endGameScreen = document.querySelector("#endGameScreen");
 let endGameMessage = document.querySelector("#endGameMessage");
-let endGamePara = document.querySelector(".endGamePare");
+let endGamePara = document.querySelector(".endGamePara");
 function showWinScreenEasy() {
   endGameMessage.innerHTML = "congratulations you have won";
   endGamePara.innerHTML = "also try your luck in hard mode";
@@ -364,6 +364,8 @@ function gameReset() {
   menuBtn.innerHTML = "menu";
   menuBtn.removeEventListener("click", goToMenu);
   endGameScreen.style.display = "none";
+  easyPrizeLoseVideo.style.display = 'none';
+  easyPrizeWinVideo.style.display = 'none';
   enableListeners();
   hideBtn();
 }
