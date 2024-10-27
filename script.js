@@ -15,7 +15,7 @@ function showBtn() {
   startBtn.style.display = "none";
   gameInfo.style.display = "none";
 }
-//menu function responsible for hiding buttons etc
+//menu function responsible for hiding buttons
 backBtn.addEventListener("click", hideBtn);
 function hideBtn() {
   easyBtn.style.display = "none";
